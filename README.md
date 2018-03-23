@@ -34,10 +34,10 @@ Run  ```setupindy ```. This creates needed wallets and keys.
 ~~~~
  <jna.version>4.2.1</jna.version>
  <dependency>
-          <groupId>net.java.dev.jna</groupId>
-          <artifactId>jna</artifactId>
-          <version>${jna.version}</version>
-      </dependency>
+ <groupId>net.java.dev.jna</groupId>
+    <artifactId>jna</artifactId>
+    <version>${jna.version}</version>
+ </dependency>
 ~~~~
 to all  ```pom.xml ``` files.
 
