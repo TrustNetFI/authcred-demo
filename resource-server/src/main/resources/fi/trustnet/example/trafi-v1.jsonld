@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+
+    "trafi": "https://trafi.fi/credentials#",
+    "authorizedscopes": "trafi:driversLicense",
+    "customerid": "trafi:licenseClass"
+  }
+}

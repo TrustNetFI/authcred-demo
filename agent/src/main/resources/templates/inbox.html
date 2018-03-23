@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>Inbox</title>
+</head>
+<body>
+
+<h2>Connections</h2>
+
+<ol>
+    <li th:each="connection : ${connections}">
+
+        <span th:text="${connection.sender}">msg</span>
+        <a class="btn" th:href="@{/deleteconnection/{id} (id=${connection.identifier})}">Delete</a>
+
+    </li>
+</ol>
+
+<h2>Invitations</h2>
+
+<ol>
+    <li th:each="invitation : ${invitations}">
+
+       <span th:text="${invitation.sender + ': ' + invitation.subject}">msg</span>
+        <a class="btn" th:href="@{/acceptinvitation/{id} (id=${invitation.identifier})}">Accept</a>
+
+    </li>
+</ol>
+
+<h2>Credential offers</h2>
+
+<ol>
+    <li th:each="credentialoffer : ${credentialoffers}">
+
+        <span th:text="${credentialoffer.issuer + ': ' + credentialoffer.type}">msg</span>
+        <a class="btn" th:href="@{/acceptcredentialoffer/{id} (id=${credentialoffer.offerid})}">Accept</a>
+
+    </li>
+</ol>
+
+<h2>Credential requests</h2>
+
+<ol>
+    <li th:each="credentialrequest : ${credentialrequests}">
+
+        <span th:text="${credentialrequest.sender + ': ' + credentialrequest.subject}">msg</span>
+        <a class="btn" th:href="@{/viewcredentialrequest/{id} (id=${credentialrequest.identifier})}">View</a>
+
+    </li>
+</ol>
+
+<h2>Received Credentials</h2>
+
+<ol>
+    <li th:each="credential : ${credentials}">
+
+        <span th:text="${credential.issuer}">msg</span>
+        <a class="btn" th:href="@{/viewcredential/{id} (id=${credential.issuer})}">View</a>
+
+    </li>
+</ol>
+
+<h2>Issued Credentials</h2>
+
+<ol>
+    <li th:each="credential : ${issuedcredentials}">
+
+        <span th:text="${credential.issuedto}">msg</span>
+        <a class="btn" th:href="@{/viewissuedcredential/{id} (id=${credential.identifier})}">View</a>
+
+        <a th:if="${!credential.revoked}" class="btn" th:href="@{/revokecredential/{id} (id=${credential.identifier})}">Revoke</a>
+        <span th:if="${credential.revoked}">Revoked</span>
+
+    </li>
+</ol>
+
+</body>
+</html>

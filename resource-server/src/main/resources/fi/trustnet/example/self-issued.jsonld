@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+
+    "example": "https://example.com/credentials#",
+    "authorizedscopes": "example:authorizedscopes",
+    "customerid": "example:custometŕid",
+    "credentialstatus" : "example:credentialstatus",
+    "revocation" : "example:revocation"
+  }
+}

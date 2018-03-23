@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>Connection</title>
+</head>
+<body>
+
+<h2>Connection</h2>
+<span>Connect Service to your Sovrin Agent?</span>
+<a class="btn" th:href="@{/acceptconnection(returnurl=${returnurl},token=${token}, claimofferurl=${claimofferurl})}">accept</a>
+
+<a class="btn" th:href="@{/cancelconnection/{url} (url=${returnurl})}">cancel</a>
+
+</body>
+</html>

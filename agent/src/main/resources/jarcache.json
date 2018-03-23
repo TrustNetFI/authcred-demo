@@ -1,0 +1,18 @@
+[
+  {
+    "Content-Location": "https://trafi.fi/credentials/v1",
+    "X-Classpath": "fi/trustnet/example/trafi-v1.jsonld",
+    "Content-Type": "application/ld+json"
+  },
+
+  {
+    "Content-Location": "https://energinet.dk/credentials/v1",
+    "X-Classpath": "fi/trustnet/example/energinet-v1.jsonld",
+    "Content-Type": "application/ld+json"
+  },
+  {
+    "Content-Location": "https://example.com/credentials/v1",
+    "X-Classpath": "fi/trustnet/example/self-issued.jsonld",
+    "Content-Type": "application/ld+json"
+  }
+]

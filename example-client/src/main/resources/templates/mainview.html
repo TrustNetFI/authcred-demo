@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>Main view</title>
+</head>
+<body>
+
+<h2>Credential</h2>
+
+<div>
+    <textarea id="myTextarea" name="something" cols="70" rows="10">Blaah blaah blaah</textarea>
+    <a class="btn" th:href="@{/token}">Request token</a>
+
+</div>
+<div>
+    <textarea id="tokenTextarea" name="something" cols="70" rows="3">Blaah blaah blaah</textarea>
+    <a class="btn" th:href="@{/datarequest}">Request data</a>
+
+</div>
+<div>
+    <textarea id="dataTextarea" name="something" cols="70" rows="3">Blaah blaah blaah</textarea>
+    <a class="btn" th:href="@{/}">close</a>
+
+</div>
+<script th:inline="javascript">
+        document.getElementById('myTextarea').value = JSON.stringify(JSON.parse([[${credential.credential}]]),null, 2);
+        document.getElementById('tokenTextarea').value = [[${token}]];
+        document.getElementById('dataTextarea').value = [[${data}]];
+</script>
+
+
+
+</body>
+</html>
