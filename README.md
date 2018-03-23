@@ -47,6 +47,6 @@ to all  ```pom.xml ``` files.
 
 [Indy](https://www.hyperledger.org/projects)
 
-[Verifiable Credentials implementation](]https://github.com/TrustNetFI/verifiable-credentials-java)
+[Verifiable Credentials implementation](https://github.com/TrustNetFI/verifiable-credentials-java)
 
 [W3C Verifiable Credentials](https://www.w3.org/2017/vc/WG/)
