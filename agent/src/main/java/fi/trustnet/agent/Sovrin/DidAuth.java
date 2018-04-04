@@ -6,7 +6,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 
-import static fi.trustnet.agent.configuration.Globals.USER_WALLET_NAME;
+import static fi.trustnet.agent.configuration.IndyConfig.USER_WALLET_NAME;
 
 
 //Simple dummy PoP token
