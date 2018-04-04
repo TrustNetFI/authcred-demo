@@ -25,7 +25,7 @@ import java.util.UUID;
 
 import static fi.trustnet.agent.configuration.IndyConfig.ISSUERSEED;
 import static fi.trustnet.agent.configuration.IndyConfig.NETWORK_NAME;
-import static fi.trustnet.agent.configuration.Globals.USER_WALLET_NAME;
+import static fi.trustnet.agent.configuration.IndyConfig.USER_WALLET_NAME;
 
 
 public class Credential {
