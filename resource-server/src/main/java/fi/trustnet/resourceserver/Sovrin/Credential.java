@@ -27,6 +27,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.UUID;
+import static fi.trustnet.resourceserver.configuration.IndyConfig.NETWORK_NAME;
 
 public class Credential {
 
@@ -141,7 +142,7 @@ public class Credential {
         byte[] issuerPublicKey;
             URI issuer = verifiableCredential.getIssuer();
             if (!LibIndy.isInitialized()) LibIndy.init(new File("./lib/libindy.so"));
-            Pool pool = Pool.openPoolLedger("badgernet", "{}").get();
+            Pool pool = Pool.openPoolLedger(NETWORK_NAME, "{}").get();
             Wallet wallet = Wallet.openWallet("rswallet", null, null).get();
             String key = Did.keyForDid(pool, wallet, issuer.toString()).get();
             wallet.closeWallet().get();
