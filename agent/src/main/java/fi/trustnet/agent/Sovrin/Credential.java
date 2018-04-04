@@ -24,6 +24,8 @@ import java.util.LinkedHashMap;
 import java.util.UUID;
 
 import static fi.trustnet.agent.configuration.IndyConfig.ISSUERSEED;
+import static fi.trustnet.agent.configuration.IndyConfig.NETWORK_NAME;
+import static fi.trustnet.agent.configuration.Globals.USER_WALLET_NAME;
 
 
 public class Credential {
@@ -146,8 +148,8 @@ public class Credential {
             byte[] issuerPublicKey;
             URI issuer = verifiableCredential.getIssuer();
             if (!LibIndy.isInitialized()) LibIndy.init(new File("./lib/libindy.so"));
-            Pool pool = Pool.openPoolLedger("badgernet", "{}").get();
-            Wallet wallet = Wallet.openWallet("rswallet", null, null).get();
+            Pool pool = Pool.openPoolLedger(NETWORK_NAME, "{}").get();
+            Wallet wallet = Wallet.openWallet(USER_WALLET_NAME, null, null).get();
             String key = Did.keyForDid(pool, wallet, issuer.toString()).get();
             wallet.closeWallet().get();
             pool.closePoolLedger().get();
