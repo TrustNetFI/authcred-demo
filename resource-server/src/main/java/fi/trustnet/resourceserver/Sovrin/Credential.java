@@ -28,6 +28,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import static fi.trustnet.resourceserver.configuration.IndyConfig.NETWORK_NAME;
+import static fi.trustnet.resourceserver.configuration.IndyConfig.RS_WALLETNAME;
 
 public class Credential {
 
@@ -143,7 +144,7 @@ public class Credential {
             URI issuer = verifiableCredential.getIssuer();
             if (!LibIndy.isInitialized()) LibIndy.init(new File("./lib/libindy.so"));
             Pool pool = Pool.openPoolLedger(NETWORK_NAME, "{}").get();
-            Wallet wallet = Wallet.openWallet("rswallet", null, null).get();
+            Wallet wallet = Wallet.openWallet(RS_WALLETNAME, null, null).get();
             String key = Did.keyForDid(pool, wallet, issuer.toString()).get();
             wallet.closeWallet().get();
             pool.closePoolLedger().get();
